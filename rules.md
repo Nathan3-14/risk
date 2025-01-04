@@ -21,6 +21,7 @@ The dice can be grouped in order to try to beat the [def values](#atk-and-def-fo
 If there are any enemy forces remaining, they attack back with an additional 1D4/troop lost (max 3D4).<br>
 If no attacking troop are lost, the most powerful attacking troop is lost.
 If there are defending units left, all units return to their original positions.
+[An example of an attack](https://nathan3-14.github.io/risk/animation]
 ### Atk and Def Forces
 Troop | Atk Force | Def Force
 -|-|-
