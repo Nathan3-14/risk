@@ -30,7 +30,8 @@ If there are any enemy forces remaining, they attack back with an additional 1D4
 If no attacking troop are lost, the most powerful attacking troop is lost.
 If there are defending units left, all units return to their original positions.
 <br>
-<a href="https://nathan3-14.github.io/risk/animation">An example of an attack</a>
+**DOESN'T INCLUDE EXTRA 2D4 FOR LOST TROOPS**
+<a href="https://nathan3-14.github.io/risk/animation">An example of an attack</a> (all dice types represented by D6 for simplicity)
 ### Atk and Def Forces
 Troop | Atk Force | Def Force
 -|-|-
