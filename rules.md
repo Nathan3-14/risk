@@ -43,7 +43,7 @@ Capital | D6 + 3 | 15 | |
 Training Camp | D6 + 1 | 7 | | 
 ## Troops
 Troops are individual units that can be part of forces.
-Both Infantry and Cavalry attack in the same way. However, cannons can join an attack if they are adjacent to the attacking force, attacking with the force listed in the brackets.<br>
+Both Infantry and Cavalry attack in the same way. However, cannons can join an attack if they are adjacent to the defending force and not part of the attacking force, attacking with the force listed in the brackets. !! revise !! (adjacent to defending or attacking force) !!<br>
 For costs and training times, see [statisitcs](#statistics)
 ## Building
 Training Camp - Allows more troops to be trained - 2 iron, 4 lumber<br>
