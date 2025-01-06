@@ -24,31 +24,27 @@ Train - Move all [troops](#troops) in **training** to **ready** and buy [troops]
 6. ***Transfer*** from up to two forces
 ## Fighting
 Only ***forces*** can attack. They can attack other ***forces***, [buildings](#building) and [troops](#troops).<br><br>
-In order to attack, dice are rolled in accordance to the [atk values](#atk-and-def-forces) of the attacking troops.<br>
-The dice can be grouped in order to try to beat the [def values](#atk-and-def-forces) of the defending [troops](#troops) or [buildings](#building).<br>
-If there are any enemy forces remaining, they attack back with an additional 1D4/troop lost (max 3D4).<br>
+In order to attack, dice are rolled in accordance to the [atk values](#statistics) of the attacking troops.<br>
+The dice can be grouped in order to try to beat the [def values](#statistics) of the defending [troops](#troops) or [buildings](#building).<br>
+If there are any enemy forces remaining, they attack back with an additional 1D4/troop lost (max 3D4, 1D4 if force is entirely wiped out).<br>6
 If no attacking troop are lost, the most powerful attacking troop is lost.
 If there are defending units left, all units return to their original positions.
 <br>
 <a href="https://nathan3-14.github.io/risk/animation">An example of an attack</a> (all dice types represented by D6 for simplicity)
-### Atk and Def Forces
-Troop | Atk Force | Def Force
--|-|-
-Undefended Troop | N/A | 2
-Infantry | D4 | 3
-Cavalry | D4 + 1 | 5
-Cannon | D4 (D6 + 1) | 3
-Factory | D4 - 1 | 9
-Capital | D6 + 3 | 15
-Training Camp | D6 + 1 | 7
+### Statistics
+Troop | Atk Force | Def Force | Training Cost | Training Time
+-|-|-|-|-
+Undefended Troop | | 2 | | 
+Infantry | D4 | 3 | $1/2 | 1 Turn
+Cavalry | D4 + 1 | 5 | $4 | 2 Turns
+Cannon | D4 (D6 + 1) | 3 | $7 | 3 Turns
+Factory | D4 - 1 | 9 | | 
+Capital | D6 + 3 | 15 | | 
+Training Camp | D6 + 1 | 7 | | 
 ## Troops
 Troops are individual units that can be part of forces.
-### Costs
-Troop | Cost
--|-
-Infantry | $1
-Cavalry | $3
-Cannon | $6
+Both Infantry and Cavalry attack in the same way. However, cannons can join an attack if they are adjacent to the attacking force, attacking with the force listed in the brackets.<br>
+For costs and training times, see [statisitcs](#statistics)
 ## Building
 Training Camp - Allows more troops to be trained - 2 iron, 4 lumber<br>
 Factory - Produces passive income - 4 iron, 3 lumber
