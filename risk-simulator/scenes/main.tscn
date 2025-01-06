@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgodlyyujaxqf"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_vse3l"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Attack" type="Node2D" parent="."]
+
+[node name="Defend" type="Node2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vse3l")
+attack_label = "Infantry: {i}
+Cavalry: {cy}
+Cannons: {cn}"
+defend_label = "Infantry: {i}
+Cavalry: {cy}
+Cannons: {cn}"
+
+[node name="AttackCount" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Infantry: {i}
+Cavalry: {cy}
+Cannons: {cn}"
+
+[node name="DefendCount" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 880.0
+offset_right = 1020.0
+offset_bottom = 101.0
+text = "Infantry: {i}
+Cavalry: {cy}
+Cannons: {cn}"
+horizontal_alignment = 2
+vertical_alignment = 1
