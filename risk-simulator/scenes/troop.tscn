@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://di7njsrnfmkub"]
+
+[ext_resource type="Texture2D" uid="uid://drwnkanuk7yih" path="res://assets/cannon.png" id="1_dleg8"]
+
+[node name="Troop" type="MarginContainer"]
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TroopTexture" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_dleg8")
+expand_mode = 4
