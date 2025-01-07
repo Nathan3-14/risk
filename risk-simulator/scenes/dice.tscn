@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ev46ith4b1xl"]
+
+[ext_resource type="Texture2D" uid="uid://b1p0en8dvftqo" path="res://assets/dice.png" id="1_axmvq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaha0"]
+atlas = ExtResource("1_axmvq")
+region = Rect2(0, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvx20"]
+atlas = ExtResource("1_axmvq")
+region = Rect2(0, 31, 32, 32)
+
+[node name="Dice" type="MarginContainer"]
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="DiceTexture" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_iaha0")
+expand_mode = 4
+
+[node name="NumberTexture" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_pvx20")

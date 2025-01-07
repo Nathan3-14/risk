@@ -1,41 +1,147 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgodlyyujaxqf"]
+[gd_scene load_steps=4 format=3 uid="uid://dgodlyyujaxqf"]
 
-[ext_resource type="Script" path="res://scripts/ui.gd" id="1_vse3l"]
+[ext_resource type="Texture2D" uid="uid://djlam5mp4ftqe" path="res://assets/dice_atlas.tres" id="2_qsntc"]
+[ext_resource type="PackedScene" uid="uid://sqd3vxihdru0" path="res://scenes/value_button.tscn" id="2_w31ly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8trkt"]
+atlas = ExtResource("2_qsntc")
+region = Rect2(0, 0, 32, 30)
 
 [node name="Main" type="Node2D"]
 
-[node name="Attack" type="Node2D" parent="."]
+[node name="AttackNumbers" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 224.0
+offset_bottom = 256.0
 
-[node name="Defend" type="Node2D" parent="."]
+[node name="AttackInfantry" parent="AttackNumbers" instance=ExtResource("2_w31ly")]
+layout_mode = 2
+value_name = "Infantry"
+
+[node name="AttackCavalry" parent="AttackNumbers" instance=ExtResource("2_w31ly")]
+layout_mode = 2
+value_name = "Cavalry"
+
+[node name="AttackCannons" parent="AttackNumbers" instance=ExtResource("2_w31ly")]
+layout_mode = 2
+value_name = "Cannons"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(512, 352)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_vse3l")
-attack_label = "Infantry: {i}
-Cavalry: {cy}
-Cannons: {cn}"
-defend_label = "Infantry: {i}
-Cavalry: {cy}
-Cannons: {cn}"
+offset_right = 1024.0
+offset_bottom = 704.0
+metadata/_edit_use_anchors_ = true
 
-[node name="AttackCount" type="Label" parent="UI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Infantry: {i}
-Cavalry: {cy}
-Cannons: {cn}"
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
-[node name="DefendCount" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = 880.0
-offset_right = 1020.0
-offset_bottom = 101.0
-text = "Infantry: {i}
-Cavalry: {cy}
-Cannons: {cn}"
-horizontal_alignment = 2
+[node name="Main" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="AttackSetup" type="VBoxContainer" parent="UI/MarginContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/MarginContainer/Main/AttackSetup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttackDisplay" type="VBoxContainer" parent="UI/MarginContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="UI/MarginContainer/Main/AttackDisplay"]
+layout_mode = 2
+split_offset = -32
+
+[node name="DiceList" type="VBoxContainer" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="D4" type="TextureRect" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer/DiceList"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8trkt")
+expand_mode = 4
+flip_h = true
+
+[node name="D5" type="TextureRect" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer/DiceList"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8trkt")
+expand_mode = 4
+flip_h = true
+
+[node name="D6" type="TextureRect" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer/DiceList"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8trkt")
+expand_mode = 4
+flip_h = true
+
+[node name="D7" type="TextureRect" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer/DiceList"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8trkt")
+expand_mode = 4
+flip_h = true
+
+[node name="D8" type="TextureRect" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer/DiceList"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8trkt")
+expand_mode = 4
+flip_h = true
+
+[node name="D9" type="TextureRect" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer/DiceList"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8trkt")
+expand_mode = 4
+flip_h = true
+
+[node name="D10" type="TextureRect" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer/DiceList"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8trkt")
+expand_mode = 4
+flip_h = true
+
+[node name="TroopList" type="VBoxContainer" parent="UI/MarginContainer/Main/AttackDisplay/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DefendDisplay" type="VBoxContainer" parent="UI/MarginContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DefendSetup" type="VBoxContainer" parent="UI/MarginContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/MarginContainer/Main/DefendSetup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Defend"
+horizontal_alignment = 1
 vertical_alignment = 1

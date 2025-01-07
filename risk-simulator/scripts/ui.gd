@@ -10,5 +10,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	return
 	$AttackCount.text = attack_label
 	$DefendCount.text = defend_label.replace("{i}", "infantry count").replace("{cy}", "cavalry count").replace("{cn}", "cannon count")
