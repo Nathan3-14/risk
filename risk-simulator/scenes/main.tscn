@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgodlyyujaxqf"]
+[gd_scene load_steps=6 format=3 uid="uid://dgodlyyujaxqf"]
 
 [ext_resource type="Script" path="res://scripts/setup-controller.gd" id="1_kvi7e"]
 [ext_resource type="PackedScene" uid="uid://sqd3vxihdru0" path="res://scenes/value_button.tscn" id="2_w31ly"]
+[ext_resource type="Texture2D" uid="uid://d3gv7x4mk7on3" path="res://assets/fight-button.png" id="3_byklq"]
+[ext_resource type="Texture2D" uid="uid://cmie2uqxun445" path="res://assets/fight-button-pressed.png" id="4_issnc"]
+[ext_resource type="Texture2D" uid="uid://be1mm0prdai80" path="res://assets/fight-button-hover.png" id="4_qncki"]
 
 [node name="Main" type="Node2D"]
 
@@ -34,80 +37,137 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Main" type="HBoxContainer" parent="UI/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
 layout_mode = 2
+
+[node name="Main" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 8
 script = ExtResource("1_kvi7e")
 
-[node name="AttackSetup" type="VBoxContainer" parent="UI/MarginContainer/Main"]
+[node name="AttackSetup" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 32
 
-[node name="Label" type="Label" parent="UI/MarginContainer/Main/AttackSetup"]
+[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer/Main/AttackSetup"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Attack"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AttackInfantry" parent="UI/MarginContainer/Main/AttackSetup" instance=ExtResource("2_w31ly")]
+[node name="AttackInfantry" parent="UI/MarginContainer/VBoxContainer/Main/AttackSetup" instance=ExtResource("2_w31ly")]
 layout_mode = 2
 value_name = "Infantry"
 
-[node name="AttackCavalry" parent="UI/MarginContainer/Main/AttackSetup" instance=ExtResource("2_w31ly")]
+[node name="AttackCavalry" parent="UI/MarginContainer/VBoxContainer/Main/AttackSetup" instance=ExtResource("2_w31ly")]
 layout_mode = 2
 value_name = "Cavalry"
 
-[node name="AttackCannons" parent="UI/MarginContainer/Main/AttackSetup" instance=ExtResource("2_w31ly")]
+[node name="AttackCannons" parent="UI/MarginContainer/VBoxContainer/Main/AttackSetup" instance=ExtResource("2_w31ly")]
 layout_mode = 2
 value_name = "Cannons"
 
-[node name="AttackCannonsSupport" parent="UI/MarginContainer/Main/AttackSetup" instance=ExtResource("2_w31ly")]
+[node name="AttackCannonsSupport" parent="UI/MarginContainer/VBoxContainer/Main/AttackSetup" instance=ExtResource("2_w31ly")]
 layout_mode = 2
 value_name = "Cannons Support"
 
-[node name="AttackDisplay" type="VBoxContainer" parent="UI/MarginContainer/Main"]
+[node name="AttackDisplay" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TroopDiceSeperator" type="HBoxContainer" parent="UI/MarginContainer/Main/AttackDisplay"]
+[node name="TroopDiceSeperator" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/AttackDisplay"]
 layout_mode = 2
 
-[node name="TroopList" type="VBoxContainer" parent="UI/MarginContainer/Main/AttackDisplay/TroopDiceSeperator"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="DiceList" type="VBoxContainer" parent="UI/MarginContainer/Main/AttackDisplay/TroopDiceSeperator"]
+[node name="TroopList" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/AttackDisplay/TroopDiceSeperator"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Compressor" type="Control" parent="UI/MarginContainer/Main/AttackDisplay/TroopDiceSeperator"]
-custom_minimum_size = Vector2(80, 0)
+[node name="DiceList" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/AttackDisplay/TroopDiceSeperator"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Compressor" type="Control" parent="UI/MarginContainer/VBoxContainer/Main/AttackDisplay/TroopDiceSeperator"]
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
-[node name="DefendDisplay" type="VBoxContainer" parent="UI/MarginContainer/Main"]
+[node name="DefendDisplay" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DefendSetup" type="VBoxContainer" parent="UI/MarginContainer/Main"]
+[node name="TroopDiceSeperator" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/DefendDisplay"]
+layout_mode = 2
+
+[node name="Compressor" type="Control" parent="UI/MarginContainer/VBoxContainer/Main/DefendDisplay/TroopDiceSeperator"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="DiceList" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/DefendDisplay/TroopDiceSeperator"]
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="Label" type="Label" parent="UI/MarginContainer/Main/DefendSetup"]
+[node name="TroopList" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/DefendDisplay/TroopDiceSeperator"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="DefendSetup" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer/Main/DefendSetup"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Defend"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="value_decreased" from="UI/MarginContainer/Main/AttackSetup/AttackInfantry" to="UI/MarginContainer/Main" method="_on_attack_troop_value_decreased"]
-[connection signal="value_increased" from="UI/MarginContainer/Main/AttackSetup/AttackInfantry" to="UI/MarginContainer/Main" method="_on_attack_troop_value_increased"]
-[connection signal="value_decreased" from="UI/MarginContainer/Main/AttackSetup/AttackCavalry" to="UI/MarginContainer/Main" method="_on_attack_troop_value_decreased"]
-[connection signal="value_increased" from="UI/MarginContainer/Main/AttackSetup/AttackCavalry" to="UI/MarginContainer/Main" method="_on_attack_troop_value_increased"]
-[connection signal="value_decreased" from="UI/MarginContainer/Main/AttackSetup/AttackCannons" to="UI/MarginContainer/Main" method="_on_attack_troop_value_decreased"]
-[connection signal="value_increased" from="UI/MarginContainer/Main/AttackSetup/AttackCannons" to="UI/MarginContainer/Main" method="_on_attack_troop_value_increased"]
-[connection signal="value_decreased" from="UI/MarginContainer/Main/AttackSetup/AttackCannonsSupport" to="UI/MarginContainer/Main" method="_on_attack_troop_value_decreased"]
-[connection signal="value_increased" from="UI/MarginContainer/Main/AttackSetup/AttackCannonsSupport" to="UI/MarginContainer/Main" method="_on_attack_troop_value_increased"]
+[node name="DefendInfantry" parent="UI/MarginContainer/VBoxContainer/Main/DefendSetup" instance=ExtResource("2_w31ly")]
+layout_mode = 2
+value_name = "Infantry"
+
+[node name="DefendCavalry" parent="UI/MarginContainer/VBoxContainer/Main/DefendSetup" instance=ExtResource("2_w31ly")]
+layout_mode = 2
+value_name = "Cavalry"
+
+[node name="DefendCannons" parent="UI/MarginContainer/VBoxContainer/Main/DefendSetup" instance=ExtResource("2_w31ly")]
+layout_mode = 2
+value_name = "Cannons"
+
+[node name="DefendCannonsSupport" parent="UI/MarginContainer/VBoxContainer/Main/DefendSetup" instance=ExtResource("2_w31ly")]
+layout_mode = 2
+value_name = "Cannons Support"
+
+[node name="FightButtonContainer" type="CenterContainer" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="UI/MarginContainer/VBoxContainer/FightButtonContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+texture_normal = ExtResource("3_byklq")
+texture_pressed = ExtResource("4_issnc")
+texture_hover = ExtResource("4_qncki")
+stretch_mode = 4
+
+[connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/AttackSetup/AttackInfantry" to="UI/MarginContainer/VBoxContainer/Main" method="_on_attack_troop_value_decreased"]
+[connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/AttackSetup/AttackInfantry" to="UI/MarginContainer/VBoxContainer/Main" method="_on_attack_troop_value_increased"]
+[connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/AttackSetup/AttackCavalry" to="UI/MarginContainer/VBoxContainer/Main" method="_on_attack_troop_value_decreased"]
+[connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/AttackSetup/AttackCavalry" to="UI/MarginContainer/VBoxContainer/Main" method="_on_attack_troop_value_increased"]
+[connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/AttackSetup/AttackCannons" to="UI/MarginContainer/VBoxContainer/Main" method="_on_attack_troop_value_decreased"]
+[connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/AttackSetup/AttackCannons" to="UI/MarginContainer/VBoxContainer/Main" method="_on_attack_troop_value_increased"]
+[connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/AttackSetup/AttackCannonsSupport" to="UI/MarginContainer/VBoxContainer/Main" method="_on_attack_troop_value_decreased"]
+[connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/AttackSetup/AttackCannonsSupport" to="UI/MarginContainer/VBoxContainer/Main" method="_on_attack_troop_value_increased"]
+[connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendInfantry" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_decreased"]
+[connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendInfantry" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_increased"]
+[connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCavalry" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_decreased"]
+[connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCavalry" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_increased"]
+[connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCannons" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_decreased"]
+[connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCannons" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_increased"]
+[connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCannonsSupport" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_decreased"]
+[connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCannonsSupport" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_increased"]
