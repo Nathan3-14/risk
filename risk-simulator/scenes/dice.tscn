@@ -1,16 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ev46ith4b1xl"]
+[gd_scene load_steps=5 format=3 uid="uid://ev46ith4b1xl"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_pl7qv"]
 [ext_resource type="Texture2D" uid="uid://b115o3nivynf" path="res://assets/dice-sprites/D6-bonus.png" id="2_tdeku"]
 [ext_resource type="Texture2D" uid="uid://dponmdpb228dq" path="res://assets/dice-sprites/Value-Q.png" id="3_5rrhl"]
+[ext_resource type="StyleBox" uid="uid://bwti7usw1axsy" path="res://scenes/troopdice-hover-texture.tres" id="4_dvin5"]
 
 [node name="Dice" type="MarginContainer"]
 offset_right = 128.0
 offset_bottom = 128.0
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
 script = ExtResource("1_pl7qv")
 
 [node name="DiceTexture" type="TextureRect" parent="."]
@@ -24,3 +21,9 @@ texture = ExtResource("3_5rrhl")
 stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/hover = ExtResource("4_dvin5")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

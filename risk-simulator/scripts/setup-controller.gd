@@ -52,6 +52,7 @@ func _on_defend_troop_value_increased(troop_type: String) -> void:
 	counter += 1
 	
 	$DefendDisplay.add_child(temp_troopdice)
+	temp_troopdice.get_node("Dice").connect("add_to_attack")
 
 
 func _on_defend_troop_value_decreased(troop_type: String) -> void:
@@ -59,3 +60,7 @@ func _on_defend_troop_value_decreased(troop_type: String) -> void:
 		if troop_type == troopdice.name.split("_&_")[0]:
 			troopdice.queue_free()
 			break
+
+
+func _on_fight_button_pressed():
+	pass # Replace with function body.

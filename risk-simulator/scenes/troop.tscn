@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://di7njsrnfmkub"]
+[gd_scene load_steps=4 format=3 uid="uid://di7njsrnfmkub"]
 
 [ext_resource type="Texture2D" uid="uid://drwnkanuk7yih" path="res://assets/cannon.png" id="1_dleg8"]
+[ext_resource type="Script" path="res://scripts/troop.gd" id="1_or7gw"]
+[ext_resource type="StyleBox" uid="uid://bwti7usw1axsy" path="res://scenes/troopdice-hover-texture.tres" id="2_m3ds1"]
 
 [node name="Troop" type="MarginContainer"]
 offset_right = 128.0
@@ -9,8 +11,15 @@ theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
+script = ExtResource("1_or7gw")
 
 [node name="TroopTexture" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("1_dleg8")
 expand_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/hover = ExtResource("2_m3ds1")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,7 @@
 extends MarginContainer
+class_name Dice
+
+signal add_to_attack
 
 var dice = {
 	"D4-s": preload("res://assets/dice-sprites/D4-standard.png"),
@@ -32,3 +35,7 @@ func roll() -> void:
 	var value = randi_range(1, int(dice_max_value))
 	
 	$NumberTexture.texture = values[value]
+
+
+func _on_button_pressed():
+	add_to_attack.emit()

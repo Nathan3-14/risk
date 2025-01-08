@@ -106,7 +106,7 @@ value_name = "Cannons Support"
 [node name="FightButtonContainer" type="CenterContainer" parent="UI/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="UI/MarginContainer/VBoxContainer/FightButtonContainer"]
+[node name="FightButton" type="TextureButton" parent="UI/MarginContainer/VBoxContainer/FightButtonContainer"]
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 texture_normal = ExtResource("3_byklq")
@@ -130,3 +130,4 @@ stretch_mode = 4
 [connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCannons" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_increased"]
 [connection signal="value_decreased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCannonsSupport" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_decreased"]
 [connection signal="value_increased" from="UI/MarginContainer/VBoxContainer/Main/DefendSetup/DefendCannonsSupport" to="UI/MarginContainer/VBoxContainer/Main" method="_on_defend_troop_value_increased"]
+[connection signal="pressed" from="UI/MarginContainer/VBoxContainer/FightButtonContainer/FightButton" to="UI/MarginContainer/VBoxContainer/Main" method="_on_fight_button_pressed"]
