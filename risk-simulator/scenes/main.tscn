@@ -8,13 +8,6 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="AttackNumbers" type="VBoxContainer" parent="."]
-visible = false
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 224.0
-offset_bottom = 256.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(512, 352)
 
@@ -78,43 +71,9 @@ value_name = "Cannons Support"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TroopDiceSeperator" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/AttackDisplay"]
-layout_mode = 2
-
-[node name="TroopList" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/AttackDisplay/TroopDiceSeperator"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="DiceList" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/AttackDisplay/TroopDiceSeperator"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Compressor" type="Control" parent="UI/MarginContainer/VBoxContainer/Main/AttackDisplay/TroopDiceSeperator"]
-custom_minimum_size = Vector2(64, 0)
-layout_mode = 2
-
 [node name="DefendDisplay" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="TroopDiceSeperator" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/DefendDisplay"]
-layout_mode = 2
-
-[node name="Compressor" type="Control" parent="UI/MarginContainer/VBoxContainer/Main/DefendDisplay/TroopDiceSeperator"]
-custom_minimum_size = Vector2(64, 0)
-layout_mode = 2
-
-[node name="DiceList" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/DefendDisplay/TroopDiceSeperator"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="TroopList" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main/DefendDisplay/TroopDiceSeperator"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
 
 [node name="DefendSetup" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/Main"]
 layout_mode = 2

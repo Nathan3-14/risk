@@ -27,61 +27,35 @@ func _process(delta: float) -> void:
 
 
 func _on_attack_troop_value_increased(troop_type: String) -> void:
-	var temp_troop = load("res://scenes/troop.tscn").instantiate()
-	temp_troop.get_node("TroopTexture").texture = troops[troop_type]
-	temp_troop.name = troop_type + "_&_" + str(counter)
-	
-	var temp_dice = load("res://scenes/dice.tscn").instantiate()
-	temp_dice.dice_type = troop_dice_referance[troop_type]
-	temp_dice.name = troop_type + "_&_" + str(counter)
+	var temp_troopdice = load("res://scenes/troop_dice_item.tscn").instantiate()
+	temp_troopdice.get_node("Troop/TroopTexture").texture = troops[troop_type]
+	temp_troopdice.get_node("Dice").dice_type = troop_dice_referance[troop_type]
+	temp_troopdice.name = troop_type + "_&_" + str(counter)
 	
 	counter += 1
-	$AttackDisplay/TroopDiceSeperator/TroopList.add_child(temp_troop)
-	$AttackDisplay/TroopDiceSeperator/DiceList.add_child(temp_dice)
 	
-	if len($AttackDisplay/TroopDiceSeperator/TroopList.get_children()) > $AttackDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x / 16 + 2:
-		$AttackDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x += 16
+	$AttackDisplay.add_child(temp_troopdice)
 
 func _on_attack_troop_value_decreased(troop_type: String) -> void:
-	for troop in $AttackDisplay/TroopDiceSeperator/TroopList.get_children():
-		if troop_type == troop.name.split("_&_")[0]:
-			troop.queue_free()
+	for troopdice in $AttackDisplay.get_children():
+		if troop_type == troopdice.name.split("_&_")[0]:
+			troopdice.queue_free()
 			break
-	for dice in $AttackDisplay/TroopDiceSeperator/DiceList.get_children():
-		if troop_type == dice.name.split("_&_")[0]:
-			dice.queue_free()
-			break
-	$AttackDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x -= 16
-	if $AttackDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x < 64:
-		$AttackDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x = 64
 
 
 func _on_defend_troop_value_increased(troop_type: String) -> void:
-	var temp_troop = load("res://scenes/troop.tscn").instantiate()
-	temp_troop.get_node("TroopTexture").texture = troops[troop_type]
-	temp_troop.name = troop_type + "_&_" + str(counter)
-	
-	var temp_dice = load("res://scenes/dice.tscn").instantiate()
-	temp_dice.dice_type = troop_dice_referance[troop_type]
-	temp_dice.name = troop_type + "_&_" + str(counter)
+	var temp_troopdice = load("res://scenes/troop_dice_item.tscn").instantiate()
+	temp_troopdice.get_node("Troop/TroopTexture").texture = troops[troop_type]
+	temp_troopdice.get_node("Dice").dice_type = troop_dice_referance[troop_type]
+	temp_troopdice.name = troop_type + "_&_" + str(counter)
 	
 	counter += 1
-	$DefendDisplay/TroopDiceSeperator/TroopList.add_child(temp_troop)
-	$DefendDisplay/TroopDiceSeperator/DiceList.add_child(temp_dice)
 	
-	if len($DefendDisplay/TroopDiceSeperator/TroopList.get_children()) > $DefendDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x / 16 + 2:
-		$DefendDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x += 16
+	$DefendDisplay.add_child(temp_troopdice)
 
 
 func _on_defend_troop_value_decreased(troop_type: String) -> void:
-	for troop in $DefendDisplay/TroopDiceSeperator/TroopList.get_children():
-		if troop_type == troop.name.split("_&_")[0]:
-			troop.queue_free()
+	for troopdice in $DefendDisplay.get_children():
+		if troop_type == troopdice.name.split("_&_")[0]:
+			troopdice.queue_free()
 			break
-	for dice in $DefendDisplay/TroopDiceSeperator/DiceList.get_children():
-		if troop_type == dice.name.split("_&_")[0]:
-			dice.queue_free()
-			break
-	$DefendDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x -= 16
-	if $DefendDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x < 64:
-		$DefendDisplay/TroopDiceSeperator/Compressor.custom_minimum_size.x = 64

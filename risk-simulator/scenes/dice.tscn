@@ -16,8 +16,11 @@ script = ExtResource("1_pl7qv")
 [node name="DiceTexture" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("2_tdeku")
-expand_mode = 4
+expand_mode = 3
 
 [node name="NumberTexture" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("3_5rrhl")
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
