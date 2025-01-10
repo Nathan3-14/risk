@@ -5,6 +5,7 @@ The capitals are placed on the map such that they are as far from each other as 
 Squares are coloured to show different resources, grey for iron and brown for lumber.<br>
 The coloured areas dictate the areas where players can place their starting troops.<br>
 <img src="https://github.com/Nathan3-14/risk/blob/main/board.png">
+
 ## Definitions
 Force - A group of one or more [troops](#troops), (can be represented by a token)<br>
 Resources - (iron, lumber) - Used to ***build***, represented by relevant tokens<br>
@@ -13,8 +14,12 @@ Occupied - An area is occupied if there is a [troop](#troops) or a force on it<b
 Move - Move a [troop](#troops) or force to an adjacent area<br>
 Transfer - Move any number of [troops](#troops) from one force to another, or an adjacent space<br>
 Train - Move all [troops](#troops) in **training** to **ready** and buy [troops](#troops) into **training** according to their [costs](#costs)<br>
+
 ## Setup
--- coming soon --
+-- NOT FINAL --
+Each player starts by selecting a starting location and placing their capital there.<br>
+Each player can then place 4 infantry and 2 cavalry on the board within their coloured area and 2 infantry in **training**.<br>
+
 ## Turn Order
 1. Gain $5 + $2/factory
 2. Per force on a resource, gain that resource
@@ -22,6 +27,7 @@ Train - Move all [troops](#troops) in **training** to **ready** and buy [troops]
 4. ***Move*** and [Attack](#fighting)
 5. [Build](#building)
 6. ***Transfer*** from up to two forces
+
 ## Fighting
 Only ***forces*** can attack. They can attack other ***forces***, [buildings](#building) and [troops](#troops).<br><br>
 In order to attack, dice are rolled in accordance to the [atk values](#statistics) of the attacking troops.<br>
@@ -31,20 +37,23 @@ If no attacking troop are lost, the most powerful attacking troop is lost.
 If there are defending units left, all units return to their original positions.
 <br>
 <a href="https://nathan3-14.github.io/risk/animation">An example of an attack</a> (all dice types represented by D6 for simplicity)
+
 ### Statistics
 Troop | Atk Force | Def Force | Training Cost | Training Time
 -|-|-|-|-
 Undefended Troop | | 2 | | 
 Infantry | D4 | 3 | $1/2 | 1 Turn
-Cavalry | D4 + 1 | 5 | $4 | 2 Turns
-Cannon | D4 (D6 + 1) | 3 | $7 | 3 Turns
+Cavalry | D6 + 1 | 5 | $4 | 2 Turns
+Cannon | D4 (D8 + 1) | 3 | $7 | 3 Turns
 Factory | D4 - 1 | 9 | | 
 Capital | D6 + 3 | 15 | | 
 Training Camp | D6 + 1 | 7 | | 
+[[POTENTIAL BALANCE CHANGES]]
 ## Troops
 Troops are individual units that can be part of forces.
 Both Infantry and Cavalry attack in the same way. However, cannons can join an attack if they are adjacent to the defending force and not part of the attacking force, attacking with the force listed in the brackets. !! revise !! (adjacent to defending or attacking force) !!<br>
 For costs and training times, see [statisitcs](#statistics)
+
 ## Building
 Training Camp - Allows more troops to be trained - 2 iron, 4 lumber<br>
 Factory - Produces passive income - 4 iron, 3 lumber
