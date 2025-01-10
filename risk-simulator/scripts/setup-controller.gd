@@ -52,7 +52,7 @@ func _on_defend_troop_value_increased(troop_type: String) -> void:
 	counter += 1
 	
 	$DefendDisplay.add_child(temp_troopdice)
-	temp_troopdice.get_node("Dice").connect("add_to_attack")
+	#temp_troopdice.get_node("Dice").connect("add_to_attack")
 
 
 func _on_defend_troop_value_decreased(troop_type: String) -> void:
