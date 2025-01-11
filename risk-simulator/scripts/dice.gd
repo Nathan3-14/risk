@@ -7,7 +7,9 @@ var dice = {
 	"D4-s": preload("res://assets/dice-sprites/D4-standard.png"),
 	"D4-b": preload("res://assets/dice-sprites/D4-bonus.png"),
 	"D6-s": preload("res://assets/dice-sprites/D6-standard.png"),
-	"D6-b": preload("res://assets/dice-sprites/D6-bonus.png")
+	"D6-b": preload("res://assets/dice-sprites/D6-bonus.png"),
+	"D8-s": preload("res://assets/dice-sprites/D8-standard.png"),
+	"D8-b": preload("res://assets/dice-sprites/D8-bonus.png")
 }
 var values = {
 	"0": preload("res://assets/dice-sprites/Value-0.png"),
